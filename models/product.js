@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Product = sequelize.define('Product', {
+  var Product = sequelize.define('Products', {
     name: DataTypes.STRING,
     price: DataTypes.STRING,
     type: DataTypes.STRING,
@@ -8,6 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     detail: DataTypes.STRING,
     date_created: DataTypes.STRING,
     quantity: DataTypes.INTEGER
-  }, { timestamp: false });
+  }, { timestamps: false });
   return Product;
 };
