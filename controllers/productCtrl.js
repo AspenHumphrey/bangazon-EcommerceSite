@@ -14,7 +14,7 @@ module.exports.getProduct = (req, res, next) => {
 
 module.exports.getProductDetail = (req, res, next) => {
   const { Product } = req.app.get('models');
-  Product.findOne({ raw: true, where: {id: req.params.id} })
+  Product.findOne({ raw: true, where: { id: req.params.id } })
   .then( ( product ) => {
     res.send(JSON.stringify( product ));
     // res.render('product', { product });
@@ -23,6 +23,7 @@ module.exports.getProductDetail = (req, res, next) => {
     next( err );
   });
 };
+
 
 
 
