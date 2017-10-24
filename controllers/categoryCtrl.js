@@ -1,5 +1,7 @@
 'use strict';
 
+// all categories populates the dom with an object list of all categories
+// will need to be a pug template with an EL on it
 module.exports.getAllCategories = (req, res, next) => {
   const { Category } = req.app.get('models');
   Category.findAll()
@@ -12,6 +14,7 @@ module.exports.getAllCategories = (req, res, next) => {
   });
 };
 
+// get category gets the category by the id, is triggered when all categories runs
 // in pug from this i need an Event Listener to route to getAllProductsInCategory
 module.exports.getCategory = (req, res, next) => {
   const { Category } = req.app.get('models');
