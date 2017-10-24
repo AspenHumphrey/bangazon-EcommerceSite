@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports.getProduct = (req, res, next) => {
-  const { Products } = req.app.get('models');
-  Products.findAll({ order: [['date_created', 'DESC']], limit: 20 })
+  const { Product } = req.app.get('models');
+  Product.findAll({ order: [['date_created', 'DESC']], limit: 20 })
   .then( ( product ) => {
     res.send(JSON.stringify( product ));
     // res.render('product', { product });
@@ -13,8 +13,8 @@ module.exports.getProduct = (req, res, next) => {
 };
 
 module.exports.getProductDetail = (req, res, next) => {
-  const { Products } = req.app.get('models');
-  Products.findOne({ raw: true, where: {id: req.params.id} })
+  const { Product } = req.app.get('models');
+  Product.findOne({ raw: true, where: {id: req.params.id} })
   .then( ( product ) => {
     res.send(JSON.stringify( product ));
     // res.render('product', { product });

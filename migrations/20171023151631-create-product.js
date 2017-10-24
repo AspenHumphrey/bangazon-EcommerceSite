@@ -23,7 +23,7 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER
       },
-      categoryId: {
+      CategoryId: {
         type: Sequelize.INTEGER
       }
     });
