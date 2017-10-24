@@ -1,0 +1,13 @@
+{ "categories":
+  [{
+    "name": "Home"
+  }, {
+    "name": "Office"
+  }, {
+    "name": "Electronics"
+  }, {
+    "name": "Grocery"
+  }, {
+    "name": "Game"
+  }]
+}
