@@ -24,6 +24,18 @@ module.exports.getProductDetail = (req, res, next) => {
   });
 };
 
+module.exports.getAllProductsInCategory = (req, res, next) => {
+  const { Product } = req.app.get('models');
+  Product.findAll({ raw: true, where: { CategoryId: req.params.id } })
+  .then( ( product ) => {
+    res.send(JSON.stringify( product ));
+    // res.render('product', { product });
+  })
+  .catch( ( err ) => {
+    next( err );
+  });
+};
+
 
 
 
