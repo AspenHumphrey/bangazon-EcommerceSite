@@ -35,7 +35,3 @@ module.exports.getAllProductsInCategory = (req, res, next) => {
     next( err );
   });
 };
-
-
-
-
