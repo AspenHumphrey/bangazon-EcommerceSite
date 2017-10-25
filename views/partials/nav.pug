@@ -3,10 +3,7 @@ if session.passport
   form(method="POST")
     button(type="submit" formaction="/logout") logout
   form(method="GET")
-    button(type="submit" formaction="/viewAccount") My Account
+    button(type="submit" formaction="/viewAccount/"+session.passport.user.id) My Account
   form(method="POST")
     input(type="text" name="search")
     button(type="submit" formaction="/search") search
-
-
-
