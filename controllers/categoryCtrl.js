@@ -19,7 +19,8 @@ module.exports.getAllCategoriesWithThreeProducts = (req, res, next) => {
 };
 
 
-// get category gets the category by the id, is triggered when all categories runs
+// get category gets the category by the id, is triggered when 
+// one category is clicked from the list of all categories with three products
 // in pug from this i need an Event Listener to route to getAllProductsInCategory
 module.exports.getCategory = (req, res, next) => {
   const { Category } = req.app.get('models');

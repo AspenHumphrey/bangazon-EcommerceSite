@@ -41,5 +41,20 @@ module.exports.getAllProductsInCategory = (req, res, next) => {
   });
 };
 
+// gets all products on key word search
+module.exports.getSearchProduct = (req, res, next) => {
+  let search = req.body.search;
+  // jt found a nifty little widget from stack overflow
+  search = search.charAt(0).toUpperCase() + search.slice(1);
+  const { Product } = req.app.get('models');
+  Product.findAll( { raw: true, where: { name: search } })
+  .then( ( product ) => {
+    res.send(JSON.stringify( product ));
+    // res.render('product', { product });
+  })
+  .catch( ( err ) => {
+    next( err );
+  });
+};
 
 
