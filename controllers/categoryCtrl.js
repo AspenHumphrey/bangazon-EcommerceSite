@@ -12,6 +12,7 @@ module.exports.getAllCategoriesWithThreeProducts = (req, res, next) => {
   })
   .then( ( category )=>{
     res.send(JSON.stringify( category ));
+    // res.render('category', { category });
   })
   .catch( (err) => {
     next(err);
@@ -19,15 +20,15 @@ module.exports.getAllCategoriesWithThreeProducts = (req, res, next) => {
 };
 
 
-// get category gets the category by the id, is triggered when 
-// one category is clicked from the list of all categories with three products
-// in pug from this i need an Event Listener to route to getAllProductsInCategory
+// get category gets the category by the id, with the name of the category
 module.exports.getCategory = (req, res, next) => {
-  const { Category } = req.app.get('models');
-  Category.findOne({ raw: true, where: { id: req.params.id } })
+  const { Category, Product } = req.app.get('models');
+  Category.findAll({ 
+    raw: true, where: { id: req.params.id }, include: [{ model: Product }]
+   })
   .then( ( category ) => {
     res.send(JSON.stringify( category ));
-    // res.render('product', { category });
+    // res.render('category', { category });
   })
   .catch( ( err ) => {
     next( err );

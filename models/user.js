@@ -8,7 +8,11 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING
   }, {timestamps: false});
 
-  User.associate= (models) => {
+  User.associate = function(models) {
+    User.hasMany(models.PaymentType, {
+      foreignKey: 'userId',
+      onDelete: 'cascade'
+    });
   };
 
   return User;

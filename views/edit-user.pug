@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title User Info
+  body
+    include partials/nav.pug
+
+    .container
+          .row
+            h3 Edit User information
+          .row
+            form(class="col s12" method="POST" action=`/patch-user/${user.id}?_method=PATCH`)
+              .row
+                div(class="input-field col s6")
+                  input(disabled placeholder=user.first_name value=user.first_name type="text" id="disabled" class="validate" name="first_name")
+                  label(for="first_name") First Name
+                div(class="input-field col s6")
+                  input(autofocus placeholder=user.last_name value=user.last_name id="last_name" type="text" class="validate" name="last_name")
+                  label(for="last_name") Last Name
+              .row
+                div(class="input-field col s6")
+                  input(placeholder=user.email value=user.email id="email" type="text" class="validate" name="email")
+                  label(for="email") email
+              .row
+                div(class="input-field col s6")
+                  each payment in paymentType
+                    input(placeholder=payment.name value=payment.name type="text" class="validate" name="payment_name") 
+                    label(for="payment_name") Payment Name #{payment.name}
+                    input(placeholder=payment.number value=payment.number type="text" class="validate" name="payment_number") 
+                    label(for="payment_number") Payment Number #{payment.number}
+              .row
+                button(type="submit" formaction="/update-user/"+user.id) Submit Update
+
+    script
+      include ../client/client.js

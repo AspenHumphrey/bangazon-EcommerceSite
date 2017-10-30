@@ -10,7 +10,7 @@ router.get('/home', getProductHome);
 // gets one products details
 router.get('/productDetail/:id', getProductDetail);
 // lists all of the products in a category by the categoryId
-router.get('/allProductsInCategory/:id', getAllProductsInCategory);
+// router.get('/allProductsInCategory/:id', getAllProductsInCategory);
 // gets all products on key word search
 router.post('/search', getSearchProduct);
 

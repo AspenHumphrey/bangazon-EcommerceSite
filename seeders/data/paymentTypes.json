@@ -1,0 +1,43 @@
+{ "paymentTypes":
+  [{
+    "name": "americanexpress",
+    "number": 372301,
+    "userId": 1
+  }, {
+    "name": "jcb",
+    "number": 353697,
+    "userId": 2
+  }, {
+    "name": "mastercard",
+    "number": 510017,
+    "userId": 2
+  }, {
+    "name": "diners-club-carte-blanche",
+    "number": 305420,
+    "userId": 1
+  }, {
+    "name": "visa-electron",
+    "number": 450835,
+    "userId": 1
+  }, {
+    "name": "visa",
+    "number": 401795,
+    "userId": 2
+  }, {
+    "name": "jcb",
+    "number": 354070,
+    "userId": 1
+  }, {
+    "name": "jcb",
+    "number": 358943,
+    "userId": 2
+  }, {
+    "name": "jcb",
+    "number": 352932,
+    "userId": 1
+  }, {
+    "name": "visa-electron",
+    "number": 417500,
+    "userId": 1
+  }]
+}
