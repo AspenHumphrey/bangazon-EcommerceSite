@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Categories
+  body
+    include partials/nav.pug
+
+    //- h1 #{category.name}
+    each product in category
+      h3 #{product.name}
+      //- h4 #{product.category.Products.name}
+      //- h4 #{product.products.price}
+      //- h4 #{product.products.detail}
+      //- h4 #{product.products.date_created}
+      //- h4 #{product.products.quantity}
+
+
+    script
+      include ../client/client.js

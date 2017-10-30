@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title User Info
+  body
+    include partials/nav.pug
+
+    a(href="/oneUser/"+user.id) Edit
+
+    h3 #{user.first_name}
+    h3 #{user.last_name}
+    h3 #{user.username}
+    h3 #{user.email}
+    
+    each payment in paymentType
+      p #{payment.name}
+      p #{payment.number}
+
+    
+    
+
+    script
+      include ../client/client.js
